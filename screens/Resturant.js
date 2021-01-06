@@ -144,6 +144,48 @@ const Resturant = ({route, navigation}) => {
                 </TouchableOpacity>
               </View>
             </View>
+
+            {/* Name & Description */}
+            <View
+              style={{
+                width: SIZES.width,
+                alignItems: 'center',
+                marginTop: 15,
+                paddingHorizontal: SIZES.padding * 2,
+              }}>
+              <Text
+                style={{
+                  marginVertical: 10,
+                  textAlign: 'center',
+                  ...FONTS.h2,
+                }}>
+                {item.name} - {item.price.toFixed(2)}
+              </Text>
+              <Text style={{...FONTS.body3}}>{item.description}</Text>
+            </View>
+
+            {/* Calories */}
+            <View
+              style={{
+                flexDirection: 'row',
+                marginTop: 10,
+              }}>
+              <Image
+                source={icons.fire}
+                style={{
+                  width: 20,
+                  height: 20,
+                  marginRight: 10,
+                }}
+              />
+              <Text
+                style={{
+                  ...FONTS.body3,
+                  color: COLORS.darkgray,
+                }}>
+                {item.calories.toFixed(2)}
+              </Text>
+            </View>
           </View>
         ))}
       </Animated.ScrollView>
